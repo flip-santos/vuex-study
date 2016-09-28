@@ -1,3 +1,5 @@
+import Vuex from 'vuex'
+
 export default new Vuex.Store({
   // Inital State
   state: {
@@ -15,4 +17,4 @@ export default new Vuex.Store({
       state.counters.push(0)
     }
   }
-});
+})

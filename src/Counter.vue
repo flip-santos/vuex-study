@@ -8,14 +8,14 @@
 </template>
 
 <script>
-  import { increment, decrement, incrementIfOdd } from './actions';
+  import { increment, decrement, incrementIfOdd } from './actions'
 
   export default {
     props: ['counterId'],
-    vuex: { 
+    vuex: {
       state: {
-        currentCount: function(state) {
-          return state.counter[this.counterId];
+        currentCount: function (state) {
+          return state.counter[this.counterId]
         }
       },
       actions: {
