@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <h1>Counters</h1>
-    <counter v-for="counter in counters" :counter-id="$index" track-by="$index"></counter>
+    <counter v-for="(counter, index) in counters" :counter-id="index" :count="counter" track-by="index"></counter>
     <div>
-      <button @click="addCounter">Add counter</button>
+      <button class="add-counter-button" @click="addCounter">Add Counter</button>
     </div>
   </div>
 </template>
@@ -14,11 +14,11 @@
 
   export default {
     vuex: {
-      state: {
-        counters: state => state.counters
+      getters: {
+        counters: state => state.counters // A "Getter"
       },
       actions: {
-        addCounter
+        addCounter // ES6 object literal shorthand for addCounter: addCounter
       }
     },
     components: { counter }

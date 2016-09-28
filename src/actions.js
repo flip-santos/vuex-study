@@ -1,9 +1,11 @@
-export const increment = ({dispach}, counterId) => dispach('INCREMENT', counterId)
+export const increment = ({ dispatch }, counterId) => dispatch('INCREMENT', counterId)
 
-export const decrement = ({dispach}, counterId) => dispach('DECREMENT', counterId)
+export const decrement = ({ dispatch }, counterId) => dispatch('DECREMENT', counterId)
 
-export const addCounter = (store, counterId) => {
+export const addCounter = ({ dispatch }) => dispatch('ADD_COUNTER')
+
+export const incrementIfOdd = (store, counterId) => {
   if (store.state.counters[counterId] % 2 !== 0) {
-    store.dispach('INCREMENT', counterId)
+    store.dispatch('INCREMENT', counterId)
   }
 }

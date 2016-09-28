@@ -1,9 +1,9 @@
 <template>
   <div class="counter">
-    {{currentCount}}
+    {{ count }}
     <button @click="decrement(counterId)">Decrement</button>
     <button @click="increment(counterId)">Increment</button>
-    <button @click="incrementIfOdd(counterId)">Increment if Odd</button>
+    <button @click="incrementIfOdd(counterId)">Increment If Odd</button>
   </div>
 </template>
 
@@ -11,13 +11,8 @@
   import { increment, decrement, incrementIfOdd } from './actions'
 
   export default {
-    props: ['counterId'],
+    props: ['counterId', 'count'],
     vuex: {
-      state: {
-        currentCount: function (state) {
-          return state.counter[this.counterId]
-        }
-      },
       actions: {
         increment,
         decrement,
@@ -26,3 +21,12 @@
     }
   }
 </script>
+
+<style>
+  .counter {
+    border: 1px solid black;
+    padding: 1rem 2rem;
+    margin: 1rem;
+    display: inline-block;
+  }
+</style>
