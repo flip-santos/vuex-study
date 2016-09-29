@@ -14,11 +14,13 @@ module.exports = {
   'rules': {
     'semi': 0,
     'no-new': 0,
-    // allow paren-less arrow functions
+    'new-parens': 0,
     'arrow-parens': 0,
-    // allow async-await
+    'keyword-spacing': 0,
+    'no-trailing-spaces': 0,
     'generator-star-spacing': 0,
-    // allow debugger during development
+    'no-multiple-empty-lines': 0,
+    'no-unused-vars': 1,
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
   }
 }
