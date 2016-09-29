@@ -1,0 +1,214 @@
+//=====================
+//  Grid System
+//=====================
+.GridColumn(@columns, @float: true, @offset: 0) {
+  width: percentage(@columns / 12);
+  
+  & when (@float = true) {
+    float: left;
+  }
+  & when (@float = false) {
+    display: inline-table;
+    margin-right: -4px;
+  }
+  & when (@offset > 0) {
+    margin-left: percentage(@offset / 12);
+  }
+}
+.GridOffset(@columns) {
+  margin-left: percentage(@columns / 12);
+}
+
+
+//=====================
+//  Extends
+//=====================
+.Reset() {
+  margin: 0;
+  padding: 0;
+}
+
+.Row() {
+  float: left;
+  width: 100%;
+}
+
+.Clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.Outline(@color: red, @thick: 1px) {
+  outline: solid @thick @color;
+}
+
+.LineHeight(@fontSize) {
+  line-height: @fontSize * 1.75;
+}
+
+//=====================
+// FOR Loops
+// Usage:
+// @list: "item1","item2","item3";
+// .For(@list); .-Each(@item) {
+//   @main: ~".@{item}";
+//   @{main}{ ... }
+// }
+//=====================
+.For(@i, @n) {.-Each(@i)}
+.For(@n)     when (isnumber(@n)) {.For(1, @n)}
+.For(@i, @n) when not (@i = @n)  {
+  .For((@i + (@n - @i) / abs(@n - @i)), @n);
+}
+
+
+//=====================
+// FOREACH Loops
+//
+//===================== 
+.For(@array)   when (default()) { .For-impl_(length(@array)) }
+.For-impl_(@i) when (@i > 1)    { .For-impl_((@i - 1)) }
+.For-impl_(@i) when (@i > 0)    { .-Each(extract(@array, @i)) }
+
+
+//=====================
+// Sticky Footer
+//=====================
+.MakeStickyFooter(@height) {
+  .mg-page-wrapper {
+    margin-bottom: -@height;
+  }
+  .mg-page-footer,
+  .mg-page-wrapper:after {
+    height: @height;
+  }
+}
+
+
+//=====================
+//  Image Replacement
+//=====================
+.Ir(@width:0, @height:0, @imgPath:'') {
+  width: @width;
+  height: @height;
+  background: url(~'@{imgPath}');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top center;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+
+//=====================
+//  Transitions
+//=====================
+.Transition(@prop: all, @speed: 200ms, @easing: ease) {
+  will-change: @prop;
+  transition: @prop @speed @easing;
+}
+
+
+//=====================
+//  Font Size
+//=====================
+.FontSize(@size, @line-height: @size) {
+  font-size: @size;
+  line-height: @line-height;
+}
+
+
+//=====================
+//  Make icon
+//=====================
+.MakeIcon(@name: '', @size: inherit) {
+  @iconVar: 'icon-@{name}';
+  @icon: @@iconVar;
+  font-family: "__moip-icons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: @icon;
+  font-size: @size;
+  vertical-align: middle;
+}
+
+
+//=====================
+//  Triangles
+//=====================
+.Triangle(@oriantation: 'up', @size: 1em, @color: @gray) {
+  width: 0;
+  height: 0;
+  & when (@oriantation = 'up') {
+    border-left: @size solid transparent;
+    border-right: @size solid transparent;
+    border-bottom: @size solid @color;
+  }
+  & when (@oriantation = 'right') {
+    border-top: @size solid transparent;
+    border-bottom: @size solid transparent;
+    border-left: @size solid @color;
+  }
+  & when (@oriantation = 'down') {
+    border-left: @size solid transparent;
+    border-right: @size solid transparent;
+    border-top: @size solid @color;
+  }
+  & when (@oriantation = 'left') {
+    border-top: @size solid transparent;
+    border-bottom: @size solid transparent;
+    border-right:@size solid @color;
+  }
+}
+
+//=================================
+//  Button's basic configuration
+//=================================
+.DefaultButton() {
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  border-radius: @border-radius;
+  min-width: @button-small;
+  height: @button-height;
+  line-height: @button-height;
+  font-size: @lg-font-size;
+  padding: 0 @sm-spacer;
+  letter-spacing: .05em;
+}
+
+
+//=================================
+// Button's mixin 
+//=================================
+.MakeButton(@bgColor, @txtColor: @white) {
+  font-family: @helvetica-light;
+  color: @txtColor;
+  background-color: @bgColor;
+  .Transition(background-color);
+  &:hover,
+  &:active{
+    .Transition(background-color);
+  }
+  &:hover{
+    background-color: lighten(@bgColor, 5%);
+  }
+  &:active{
+    background-color: darken(@bgColor, 5%);
+  }
+}

@@ -1,26 +1,21 @@
 <template>
-  <div id="app">
-    <h1>Counters</h1>
-    <counter v-for="(counter, index) in counters" :counter-id="index" :count="counter" track-by="index"></counter>
-    <div>
-      <button class="add-counter-button" @click="addCounter">Add Counter</button>
-    </div>
-  </div>
+  <main id="app">
+    <h1>Olá mundo</h1>
+  </main>
 </template>
 
-<script>
-  import counter from './Counter.vue'
-  import { addCounter } from './actions'
+<style lang="less">
+  // @import (reference) 'assets/styles/references';
+  @import 'assets/styles/main';
 
+  h1{
+    color: @blue;
+  }
+</style>
+
+<script>
   export default {
-    vuex: {
-      getters: {
-        counters: state => state.counters // A "Getter"
-      },
-      actions: {
-        addCounter // ES6 object literal shorthand for addCounter: addCounter
-      }
-    },
-    components: { counter }
+    vuex: {},
+    components: {}
   }
 </script>

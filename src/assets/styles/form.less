@@ -1,0 +1,213 @@
+//=========================
+// Input types array-like
+//=========================
+// @all-input-types: text,
+//                  password,
+//                  datetime,
+//                  datetime-local,
+//                  date,
+//                  month,
+//                  time,
+//                  week,
+//                  number,
+//                  email,
+//                  url,
+//                  search,
+//                  tel,
+//                  color;
+
+
+//=========================
+// Basic input mixin
+//=========================
+.DefaultInput(){
+  .FontSize(@lg-font-size, @lg-font-size * 2);
+  .Transition(border-color);
+  display: block;
+  width: 100%;
+  color: @gray;
+  border: solid 1px;
+  border-color: @light-gray;
+  background-color: @off-white;
+  border-radius: @border-radius;
+  padding: 4px @xs-spacer; 
+  &._focus,
+  &._valid,
+  &._invalid{
+    .Transition(border-color);
+  }
+}
+// .IconField(@icon){
+//  @icon-class: ~"._@{icon}";
+//  @icon-size: 20px;
+//  .mg-icon-field:before{
+//  }
+// }
+
+
+//=========================
+// Input types
+//=========================
+// .mg-form{
+//  .For(@all-input-types); .-Each(@type) {
+//    input[type="@{type}"]{
+//      .DefaultInput();
+//    }
+//  }
+// }
+
+//=========================
+// Input Modifiers
+//=========================
+.mg-form{
+  input,
+  textarea{
+    .DefaultInput();
+    .Transition();
+    &._focus{
+      .Transition();
+      color: @blue;
+      border-color: @blue;
+    }
+    &._invalid{
+      .Transition();
+      color: @red;
+      border-color: @red;
+    }
+    &._valid{
+      .Transition();
+      color: @blue;
+      border-color: @blue;
+    }
+    &._loading{
+      .Transition();
+     //  color: @yellow;
+      // border-color: @yellow;
+    }
+  }
+}
+
+
+//=========================
+// Input messages
+//=========================
+.mg-form-message{
+  display: block;
+  width: 100%;
+  color: @gray;
+  margin: @xs-spacer 0;
+  &._invalid{ 
+    color: @red 
+  }
+  &._valid{ 
+    color: @blue 
+  }
+}
+
+
+//=========================
+// Form components
+//=========================
+.mg-form{
+  label{
+    display: block;
+    .FontSize(@lg-font-size);
+    margin-bottom: @xs-spacer;
+  }
+  textarea{
+    .DefaultInput();
+    line-height: @lg-font-size + (@lg-font-size / 4);
+    min-height: 100px;
+    resize: vertical;
+    padding: @xs-spacer;
+  }
+  .view-password{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: @light-gray-2;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    display: none;
+    
+    &._visible{
+      display: block;
+    }
+    
+    &:before{
+      .MakeIcon(eye);
+    }
+    &._active{
+      &:before{
+        .MakeIcon(eye-inverse);
+      } 
+    }
+  }
+}
+
+//=========================
+// Icon fields
+//=========================
+.mg-icon-field{
+  .DefaultInput();
+  background-color: @white;
+  position: relative;
+  margin: @sm-spacer 0;
+  padding: 0;
+
+  [class^="icon-"],
+  [class*=" icon-"]{
+    position: absolute;
+    font-size: @xl-font-size;
+    top: @xs-spacer;
+    left: @xs-spacer;
+    color: @light-gray-2;
+  }
+  
+  &:first-of-type{
+    margin-top: 0;
+  }
+  input{
+    border: none;
+    padding-left: @md-spacer + 10px;
+    background-color: @white;
+  }
+  
+  &._focus{
+    border-color: @blue;
+    input,
+    [class^="icon-"],
+    [class*=" icon-"]{
+      color: @blue;
+    }
+  }
+
+  &._invalid{
+    border-color: @red;
+    input,
+    [class^="icon-"],
+    [class*=" icon-"]{
+      color: @red;
+    }
+  }
+
+  &._valid{
+    border-color: @blue;
+    input,
+    [class^="icon-"],
+    [class*=" icon-"]{
+      color: @blue;
+    }
+  }
+
+  &._loading{
+    // border-color: @yellow;
+    input,
+    [class^="icon-"],
+    [class*=" icon-"]{
+      // color: @yellow;
+    }
+  }
+
+}

@@ -6,18 +6,18 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   // Initial state
   state: {
-    counters: []
+    // counters: []
   },
   // Mutations
   mutations: {
-    INCREMENT: ({ counters }, counterId) => {
-      counters.$set(counterId, counters[counterId] + 1)
-    },
-    DECREMENT: ({ counters }, counterId) => {
-      counters.$set(counterId, counters[counterId] - 1)
-    },
-    ADD_COUNTER: ({ counters }) => {
-      counters.push(0)
-    }
+    // INCREMENT: ({ counters }, counterId) => {
+    //   counters.$set(counterId, counters[counterId] + 1)
+    // },
+    // DECREMENT: ({ counters }, counterId) => {
+    //   counters.$set(counterId, counters[counterId] - 1)
+    // },
+    // ADD_COUNTER: ({ counters }) => {
+    //   counters.push(0)
+    // }
   }
 })

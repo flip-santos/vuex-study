@@ -1,0 +1,249 @@
+//===============================
+// Page Wrapper and Sticky Footer
+//===============================
+.page-wrapper {
+  min-height: 100%;
+}
+
+.page-wrapper:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.MakeStickyFooter(0);
+
+
+//===============================
+// Inner Container
+//===============================
+.inner-container{
+  &:extend(.Reset);
+  width: @md-site-container;
+  margin: 0 auto;
+  padding: 0 @sm-spacer;
+  
+  &._small{
+    width: 400px;
+  }
+
+  &._full{
+    width: 100%;
+  }
+
+  @media @large{
+    width: @lg-site-container;
+  }
+    
+  @media @tablet{
+    width: 100%;
+    padding: 0 @sm-spacer;
+  }
+  @media @phone{
+    padding: 0 @xs-spacer;
+    &._small{ width: 100% }
+  }
+}
+
+
+//===============================
+// Margins
+//===============================
+.margin-xs{ margin: @xs-spacer !important }
+.margin-sm{ margin: @sm-spacer !important }
+.margin-md{ margin: @md-spacer !important }
+.margin-lg{ margin: @lg-spacer !important }
+
+.margin-top-xs{ margin-top: @xs-spacer !important }
+.margin-top-sm{ margin-top: @sm-spacer !important }
+.margin-top-md{ margin-top: @md-spacer !important }
+.margin-top-lg{ margin-top: @lg-spacer !important }
+
+.margin-left-xs{ margin-left: @xs-spacer !important }
+.margin-left-sm{ margin-left: @sm-spacer !important }
+.margin-left-md{ margin-left: @md-spacer !important }
+.margin-left-lg{ margin-left: @lg-spacer !important }
+
+.margin-right-xs{ margin-right: @xs-spacer !important }
+.margin-right-sm{ margin-right: @sm-spacer !important }
+.margin-right-md{ margin-right: @md-spacer !important }
+.margin-right-lg{ margin-right: @lg-spacer !important }
+
+.margin-bottom-xs{ margin-bottom: @xs-spacer !important }
+.margin-bottom-sm{ margin-bottom: @sm-spacer !important }
+.margin-bottom-md{ margin-bottom: @md-spacer !important }
+.margin-bottom-lg{ margin-bottom: @lg-spacer !important }
+
+
+//===============================
+// Paddings
+//===============================
+.padding-xs{ padding: @xs-spacer !important }
+.padding-sm{ padding: @sm-spacer !important }
+.padding-md{ padding: @md-spacer !important }
+.padding-lg{ padding: @lg-spacer !important }
+
+.padding-top-xs{ padding-top: @xs-spacer !important }
+.padding-top-sm{ padding-top: @sm-spacer !important }
+.padding-top-md{ padding-top: @md-spacer !important }
+.padding-top-lg{ padding-top: @lg-spacer !important }
+
+.padding-left-xs{ padding-left: @xs-spacer !important }
+.padding-left-sm{ padding-left: @sm-spacer !important }
+.padding-left-md{ padding-left: @md-spacer !important }
+.padding-left-lg{ padding-left: @lg-spacer !important }
+
+.padding-right-xs{ padding-right: @xs-spacer !important }
+.padding-right-sm{ padding-right: @sm-spacer !important }
+.padding-right-md{ padding-right: @md-spacer !important }
+.padding-right-lg{ padding-right: @lg-spacer !important }
+
+.padding-bottom-xs{ padding-bottom: @xs-spacer !important }
+.padding-bottom-sm{ padding-bottom: @sm-spacer !important }
+.padding-bottom-md{ padding-bottom: @md-spacer !important }
+.padding-bottom-lg{ padding-bottom: @lg-spacer !important }
+
+
+//===============================
+// Alignments
+//===============================
+.pull-left   { float: left !important }
+.pull-right  { float: right !important }
+.text-center { text-align: center !important }
+.text-left   { text-align: left !important }
+.text-right  { text-align: right !important }
+
+
+//===============================
+// Colors
+//===============================
+.color{
+  &._blue       { color: @blue       !important }
+  &._dark-blue  { color: @dark-blue  !important }
+  &._purple     { color: @purple     !important }
+  &._green      { color: @green      !important }
+  &._yellow     { color: @yellow     !important }
+  &._red        { color: @red        !important }
+  &._black      { color: @black      !important }
+  &._gray       { color: @gray       !important }
+  &._light-gray { color: @light-gray !important }
+  &._ice-white  { color: @ice-white  !important }
+  &._off-white  { color: @off-white  !important }
+  &._white      { color: @white      !important }
+}
+
+.bg-color{
+  &._blue       { background-color: @blue       !important }
+  &._dark-blue  { background-color: @dark-blue  !important }
+  &._purple     { background-color: @purple     !important }
+  &._green      { background-color: @green      !important }
+  &._yellow     { background-color: @yellow     !important }
+  &._red        { background-color: @red        !important }
+  &._black      { background-color: @black      !important }
+  &._gray       { background-color: @gray       !important }
+  &._light-gray { background-color: @light-gray !important }
+  &._ice-white  { background-color: @ice-white  !important }
+  &._off-white  { background-color: @off-white  !important }
+  &._white      { background-color: @white      !important }
+}
+
+.border-color{
+  &._blue       { border-color: @blue       !important }
+  &._dark-blue  { border-color: @dark-blue  !important }
+  &._purple     { border-color: @purple     !important }
+  &._green      { border-color: @green      !important }
+  &._yellow     { border-color: @yellow     !important }
+  &._red        { border-color: @red        !important }
+  &._black      { border-color: @black      !important }
+  &._gray       { border-color: @gray       !important }
+  &._light-gray { border-color: @light-gray !important }
+  &._ice-white  { border-color: @ice-white  !important }
+  &._off-white  { border-color: @off-white  !important }
+  &._white      { border-color: @white      !important }
+}
+
+//===============================
+// Fonts
+//===============================
+.font-size-xs{
+  font-size: @xs-font-size;
+}
+.font-size-sm{
+  font-size: @sm-font-size;
+}
+.font-size-md{
+  font-size: @md-font-size;
+}
+.font-size-lg{
+  font-size: @lg-font-size;
+}
+.font-size-xl{
+  font-size: @xl-font-size;
+}
+
+
+//===============================
+// Brand
+//===============================
+.logo-moip-color{
+  .Reset();
+  .Ir(200px, 90px, ~'@{root}/assets/images/moip-color.svg');
+  background-position: top center;
+}
+
+.strike-text{
+  display: block;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap; 
+  color: @gray;
+  &:first-of-type{
+    margin: @sm-spacer 0;
+  }
+  & > span{
+    position: relative;
+    display: inline-block;
+    &:before,
+    &:after{
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 9999px;
+      height: 1px;
+      background: @light-gray;
+    }    
+    &:before{
+      right: 100%;
+      margin-right: 15px;
+    }
+    &:after{
+      left: 100%;
+      margin-left: 15px;
+    }
+  }
+}
+
+//===============================
+// Links
+//===============================
+.link{
+  color: @blue;
+  text-decoration: none;
+  border-bottom: solid 1px @blue;
+  .Transition();
+  &:hover{
+    .Transition();
+    color: lighten(@blue, 10%);
+    border-color: lighten(@blue, 10%);
+  }
+  
+  &._red{
+    color: @red;
+    border-color: @red;
+    &:hover{
+      .Transition();
+      color: saturate(@red, 50%);
+      border-color: saturate(@red, 10%);   
+    }
+  }
+}

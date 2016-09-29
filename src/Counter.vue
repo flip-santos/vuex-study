@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="counter">
     {{ count }}
     <button @click="decrement(counterId)">Decrement</button>
@@ -29,4 +29,4 @@
     margin: 1rem;
     display: inline-block;
   }
-</style>
+</style> -->

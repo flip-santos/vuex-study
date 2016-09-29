@@ -1,0 +1,119 @@
+//========================
+//  Env
+//========================
+@root:    "../../";
+@assets:  "@{root}/assets";
+@images:  "@{assets}/images";
+
+//========================
+//  Default Colors
+//========================
+@blue:         #0099e0;
+@dark-blue:    #002756;
+@purple:       #4f008d;
+@green:        #5fb760;
+@yellow:       #f4cf00;
+@red:          #d75452;
+@black:        #333132;
+@gray:         #999999;
+@light-gray:   #e6e7e8;
+@light-gray-2: #c0c0c0;
+@ice-white:    #ebf7fc;
+@off-white:    #f1f2f2;
+@white:        #ffffff;
+
+
+//========================
+//  Layers
+//========================
+ @layer-base:    0;
+ @layer-middle:  100;
+ @layer-overlay: 1000;
+
+//========================
+//  Fonts
+//========================
+@open-sans:       "Open Sans", sans-serif;
+@helvetica:       "helvetica_neue_lt_std65Md", sans-serif;
+@helvetica-light: "helvetica_neue_lt_std45_light", sans-serif;
+
+@root-font-size:  65.2%;
+@xs-font-size:    1rem;
+@sm-font-size:    1.2rem;
+@md-font-size:    1.4rem;
+@lg-font-size:    1.6rem;
+@xl-font-size:    2rem;
+
+@h1-font-size:    3rem;
+@h2-font-size:    2.75rem;
+@h3-font-size:    2.5rem;
+@h4-font-size:    2.2rem;
+@h5-font-size:    2rem;
+@h6-font-size:    @md-font-size;
+
+
+//========================
+//  Default Sizes
+//========================
+@button-height:         40px;
+@button-small:          100px;
+@button-medium:         200px;
+@button-large:          300px;
+@default-footer-height: 50px;
+@md-site-container:     980px;
+@lg-site-container:     1024px;
+@border-radius:         .4rem;
+
+//========================
+//  Spaces
+//========================
+@xs-spacer: 10px;
+@sm-spacer: 20px;
+@md-spacer: 40px;
+@lg-spacer: 60px;
+
+
+//========================
+//  Responsive
+//========================
+@xs-width-min: 320px;
+@sm-width-min: 768px;
+@md-width-min: 992px;
+@lg-width-min: 1200px;
+@xs-width-max: (@sm-width-min - 1);
+@sm-width-max: (@md-width-min - 1);
+@md-width-max: (@lg-width-min - 1);
+
+
+//========================
+//  Media Queries
+//========================
+@phone:          ~"only screen and (max-width: @{xs-width-max})";
+@phone-strict:   ~"only screen and (min-width: @{xs-width-min})   and (max-width: @{xs-width-max})";
+@tablet:         ~"only screen and (max-width: @{sm-width-max})";
+@tablet-strict:  ~"only screen and (min-width: @{sm-width-min})   and (max-width: @{sm-width-max})";
+@desktop:        ~"only screen and (min-width: @{md-width-min})";
+@desktop-strict: ~"only screen and (min-width: @{md-width-min})   and (max-width: @{md-width-max})";
+@large:          ~"only screen and (min-width: @{lg-width-min})";
+
+//========================
+//  Moip Icons
+//========================
+@icon-cancel:          "\EA01";
+@icon-envelope:        "\EA02";
+@icon-eye-inverse:     "\EA03";
+@icon-eye:             "\EA04";
+@icon-google-plus:     "\EA05";
+@icon-lock-open:       "\EA06";
+@icon-lock:            "\EA07";
+@icon-menu:            "\EA08";
+@icon-moip-symbol:     "\EA09";
+@icon-moip:            "\EA0A";
+@icon-next-arrow:      "\EA0B";
+@icon-next-circle:     "\EA0C";
+@icon-previous-arrow:  "\EA0D";
+@icon-previous-circle: "\EA0E";
+@icon-trade:           "\EA0F";
+@icon-user:            "\EA10";
+@icon-warning-full:    "\EA11";
+@icon-warning:         "\EA12";

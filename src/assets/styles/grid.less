@@ -1,0 +1,74 @@
+//=================================
+// MOIP Grid System
+//=================================
+@gridColumns: 1,2,3,4,5,6,7,8,9,10,11,12;
+.row,
+.invert-row{
+  display: block;
+  width: 100%;
+  .Clearfix();
+  
+  .For(@gridColumns); .-Each(@column) {
+    .col-@{column}{
+      .GridColumn(@column);
+      box-sizing: border-box;
+      padding: @xs-spacer;
+      min-height: 1px;
+    }
+    @media @phone{
+      .sm-col-@{column}{
+        .GridColumn(@column);
+      }
+    }
+    @media @tablet{
+      .md-col-@{column}{
+        .GridColumn(@column);
+      }
+    }
+
+    ._offset-@{column} { .GridOffset(@column) }
+  }
+  
+}
+
+.invert-row{
+  [class^="sm-col-"],
+  [class*=" sm-col-"],
+  [class^="col-"],
+  [class*=" col-"] {
+    float: right;
+  }
+}
+
+.highlight-grid > div{
+  font-family: @helvetica;
+  color: @gray;
+  outline: solid 1px @light-gray-2;
+  background-color: @off-white;
+  text-align: center;
+  line-height: @md-spacer;
+}
+
+
+//=================================
+// MOIP Flex Grid
+//=================================
+.flex-grid{
+  display: flex;
+  width: 100%;
+}
+.grid-item{
+  flex-grow: 1;
+  min-width: 140px;
+  padding-left: @xs-spacer;
+  padding-right: @xs-spacer;
+}
+
+@media @phone{
+  .flex-grid{
+    flex-direction: column
+  }
+  .grid-item{
+    min-width: 0;
+  }
+}
