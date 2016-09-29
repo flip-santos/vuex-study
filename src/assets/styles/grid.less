@@ -6,27 +6,27 @@
 .invert-row{
   display: block;
   width: 100%;
-  .Clearfix();
+  .clearfix();
   
-  .For(@gridColumns); .-Each(@column) {
+  .for(@gridColumns); .-each(@column) {
     .col-@{column}{
-      .GridColumn(@column);
+      .grid_column(@column);
       box-sizing: border-box;
       padding: @xs-spacer;
       min-height: 1px;
     }
     @media @phone{
       .sm-col-@{column}{
-        .GridColumn(@column);
+        .grid_column(@column);
       }
     }
     @media @tablet{
       .md-col-@{column}{
-        .GridColumn(@column);
+        .grid_column(@column);
       }
     }
 
-    ._offset-@{column} { .GridOffset(@column) }
+    ._offset-@{column} { .grid_offset(@column) }
   }
   
 }

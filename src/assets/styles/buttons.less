@@ -3,16 +3,16 @@
 //=================================
 .button,
 .icon-button{
-  .DefaultButton();
+  .default_button();
   &._medium    { width: @button-medium }
   &._large     { width: @button-large }
   &._full      { width: 100% }
-  &._primary   { .MakeButton(@blue) }
-  &._secondary { .MakeButton(@purple) }
-  &._tertiary  { .MakeButton(@light-gray, @gray) }
-  &._negative  { .MakeButton(@red) }
+  &._primary   { .make_button(@blue) }
+  &._secondary { .make_button(@purple) }
+  &._tertiary  { .make_button(@light-gray, @gray) }
+  &._negative  { .make_button(@red) }
   &._white     { 
-    .MakeButton(transparent, @white);
+    .make_button(transparent, @white);
     height: auto;
     line-height: @lg-font-size;
     padding: @xs-spacer @sm-spacer; 

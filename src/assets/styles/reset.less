@@ -74,15 +74,15 @@ strong{
 }
 
 small{
-  .FontSize(@sm-font-size);
+  .font_size(@sm-font-size);
 }
 a{
   color: @blue;
   text-decoration: underline;
   // border-bottom: solid 1px @blue;
-  .Transition();
+  .transition();
   &:hover{
-    .Transition();
+    .transition();
     color: lighten(@blue, 10%);
     // border-color: lighten(@blue, 10%);
   }
@@ -136,14 +136,14 @@ nav{
     display: block;
     border: none;
     color: @gray;
-    .Transition(color);
+    .transition(color);
     &:hover{
-      .Transition(color);
+      .transition(color);
       color: lighten(@blue, 10%);
     }
     &.active,
     &:active{
-      .Transition(color);
+      .transition(color);
       color: @blue; 
     }
   }
@@ -161,7 +161,7 @@ dd{
 }
 
 fieldset{
-  .Reset();
+  .reset();
   border: none;
 }
 

@@ -11,14 +11,14 @@
   clear: both;
 }
 
-.MakeStickyFooter(0);
+.make_sticky_footer(0);
 
 
 //===============================
 // Inner Container
 //===============================
 .inner-container{
-  &:extend(.Reset);
+  &:extend(.reset);
   width: @md-site-container;
   margin: 0 auto;
   padding: 0 @sm-spacer;
@@ -186,8 +186,8 @@
 // Brand
 //===============================
 .logo-moip-color{
-  .Reset();
-  .Ir(200px, 90px, ~'@{root}/assets/images/moip-color.svg');
+  .reset();
+  .ir(200px, 90px, ~'@{root}/assets/images/moip-color.svg');
   background-position: top center;
 }
 
@@ -230,9 +230,9 @@
   color: @blue;
   text-decoration: none;
   border-bottom: solid 1px @blue;
-  .Transition();
+  .transition();
   &:hover{
-    .Transition();
+    .transition();
     color: lighten(@blue, 10%);
     border-color: lighten(@blue, 10%);
   }
@@ -241,7 +241,7 @@
     color: @red;
     border-color: @red;
     &:hover{
-      .Transition();
+      .transition();
       color: saturate(@red, 50%);
       border-color: saturate(@red, 10%);   
     }

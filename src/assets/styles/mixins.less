@@ -1,7 +1,7 @@
 //=====================
 //  Grid System
 //=====================
-.GridColumn(@columns, @float: true, @offset: 0) {
+.grid_column(@columns, @float: true, @offset: 0) {
   width: percentage(@columns / 12);
   
   & when (@float = true) {
@@ -15,7 +15,7 @@
     margin-left: percentage(@offset / 12);
   }
 }
-.GridOffset(@columns) {
+.grid_offset(@columns) {
   margin-left: percentage(@columns / 12);
 }
 
@@ -23,17 +23,17 @@
 //=====================
 //  Extends
 //=====================
-.Reset() {
+.reset() {
   margin: 0;
   padding: 0;
 }
 
-.Row() {
+.row() {
   float: left;
   width: 100%;
 }
 
-.Clearfix() {
+.clearfix() {
   &:before,
   &:after {
     content: " ";
@@ -44,11 +44,11 @@
   }
 }
 
-.Outline(@color: red, @thick: 1px) {
+.outline(@color: red, @thick: 1px) {
   outline: solid @thick @color;
 }
 
-.LineHeight(@fontSize) {
+.lineHeight(@fontSize) {
   line-height: @fontSize * 1.75;
 }
 
@@ -56,15 +56,15 @@
 // FOR Loops
 // Usage:
 // @list: "item1","item2","item3";
-// .For(@list); .-Each(@item) {
+// .for(@list); .-each(@item) {
 //   @main: ~".@{item}";
 //   @{main}{ ... }
 // }
 //=====================
-.For(@i, @n) {.-Each(@i)}
-.For(@n)     when (isnumber(@n)) {.For(1, @n)}
-.For(@i, @n) when not (@i = @n)  {
-  .For((@i + (@n - @i) / abs(@n - @i)), @n);
+.for(@i, @n) {.-each(@i)}
+.for(@n)     when (isnumber(@n)) {.for(1, @n)}
+.for(@i, @n) when not (@i = @n)  {
+  .for((@i + (@n - @i) / abs(@n - @i)), @n);
 }
 
 
@@ -72,20 +72,20 @@
 // FOREACH Loops
 //
 //===================== 
-.For(@array)   when (default()) { .For-impl_(length(@array)) }
-.For-impl_(@i) when (@i > 1)    { .For-impl_((@i - 1)) }
-.For-impl_(@i) when (@i > 0)    { .-Each(extract(@array, @i)) }
+.for(@array)   when (default()) { .for-impl_(length(@array)) }
+.for-impl_(@i) when (@i > 1)    { .for-impl_((@i - 1)) }
+.for-impl_(@i) when (@i > 0)    { .-each(extract(@array, @i)) }
 
 
 //=====================
 // Sticky Footer
 //=====================
-.MakeStickyFooter(@height) {
-  .mg-page-wrapper {
+.make_sticky_footer(@height) {
+  .page-wrapper {
     margin-bottom: -@height;
   }
-  .mg-page-footer,
-  .mg-page-wrapper:after {
+  .page-footer,
+  .page-wrapper:after {
     height: @height;
   }
 }
@@ -94,7 +94,7 @@
 //=====================
 //  Image Replacement
 //=====================
-.Ir(@width:0, @height:0, @imgPath:'') {
+.ir(@width:0, @height:0, @imgPath:'') {
   width: @width;
   height: @height;
   background: url(~'@{imgPath}');
@@ -110,7 +110,7 @@
 //=====================
 //  Transitions
 //=====================
-.Transition(@prop: all, @speed: 200ms, @easing: ease) {
+.transition(@prop: all, @speed: 200ms, @easing: ease) {
   will-change: @prop;
   transition: @prop @speed @easing;
 }
@@ -119,7 +119,7 @@
 //=====================
 //  Font Size
 //=====================
-.FontSize(@size, @line-height: @size) {
+.font_size(@size, @line-height: @size) {
   font-size: @size;
   line-height: @line-height;
 }
@@ -128,7 +128,7 @@
 //=====================
 //  Make icon
 //=====================
-.MakeIcon(@name: '', @size: inherit) {
+.make_icon(@name: '', @size: inherit) {
   @iconVar: 'icon-@{name}';
   @icon: @@iconVar;
   font-family: "__moip-icons";
@@ -149,7 +149,7 @@
 //=====================
 //  Triangles
 //=====================
-.Triangle(@oriantation: 'up', @size: 1em, @color: @gray) {
+.make_triangle(@oriantation: 'up', @size: 1em, @color: @gray) {
   width: 0;
   height: 0;
   & when (@oriantation = 'up') {
@@ -177,7 +177,7 @@
 //=================================
 //  Button's basic configuration
 //=================================
-.DefaultButton() {
+.default_button() {
   display: inline-block;
   cursor: pointer;
   border: none;
@@ -196,14 +196,14 @@
 //=================================
 // Button's mixin 
 //=================================
-.MakeButton(@bgColor, @txtColor: @white) {
+.make_button(@bgColor, @txtColor: @white) {
   font-family: @helvetica-light;
   color: @txtColor;
   background-color: @bgColor;
-  .Transition(background-color);
+  .transition(background-color);
   &:hover,
   &:active{
-    .Transition(background-color);
+    .transition(background-color);
   }
   &:hover{
     background-color: lighten(@bgColor, 5%);

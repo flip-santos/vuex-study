@@ -20,9 +20,9 @@
 //=========================
 // Basic input mixin
 //=========================
-.DefaultInput(){
-  .FontSize(@lg-font-size, @lg-font-size * 2);
-  .Transition(border-color);
+.default_input(){
+  .font_size(@lg-font-size, @lg-font-size * 2);
+  .transition(border-color);
   display: block;
   width: 100%;
   color: @gray;
@@ -34,13 +34,13 @@
   &._focus,
   &._valid,
   &._invalid{
-    .Transition(border-color);
+    .transition(border-color);
   }
 }
 // .IconField(@icon){
 //  @icon-class: ~"._@{icon}";
 //  @icon-size: 20px;
-//  .mg-icon-field:before{
+//  .icon-field:before{
 //  }
 // }
 
@@ -48,10 +48,10 @@
 //=========================
 // Input types
 //=========================
-// .mg-form{
-//  .For(@all-input-types); .-Each(@type) {
+// .form{
+//  .for(@all-input-types); .-each(@type) {
 //    input[type="@{type}"]{
-//      .DefaultInput();
+//      .default_input();
 //    }
 //  }
 // }
@@ -59,28 +59,28 @@
 //=========================
 // Input Modifiers
 //=========================
-.mg-form{
+.form{
   input,
   textarea{
-    .DefaultInput();
-    .Transition();
+    .default_input();
+    .transition();
     &._focus{
-      .Transition();
+      .transition();
       color: @blue;
       border-color: @blue;
     }
     &._invalid{
-      .Transition();
+      .transition();
       color: @red;
       border-color: @red;
     }
     &._valid{
-      .Transition();
+      .transition();
       color: @blue;
       border-color: @blue;
     }
     &._loading{
-      .Transition();
+      .transition();
      //  color: @yellow;
       // border-color: @yellow;
     }
@@ -91,7 +91,7 @@
 //=========================
 // Input messages
 //=========================
-.mg-form-message{
+.form-message{
   display: block;
   width: 100%;
   color: @gray;
@@ -108,14 +108,14 @@
 //=========================
 // Form components
 //=========================
-.mg-form{
+.form{
   label{
     display: block;
-    .FontSize(@lg-font-size);
+    .font_size(@lg-font-size);
     margin-bottom: @xs-spacer;
   }
   textarea{
-    .DefaultInput();
+    .default_input();
     line-height: @lg-font-size + (@lg-font-size / 4);
     min-height: 100px;
     resize: vertical;
@@ -136,11 +136,11 @@
     }
     
     &:before{
-      .MakeIcon(eye);
+      .make_icon(eye);
     }
     &._active{
       &:before{
-        .MakeIcon(eye-inverse);
+        .make_icon(eye-inverse);
       } 
     }
   }
@@ -149,8 +149,8 @@
 //=========================
 // Icon fields
 //=========================
-.mg-icon-field{
-  .DefaultInput();
+.icon-field{
+  .default_input();
   background-color: @white;
   position: relative;
   margin: @sm-spacer 0;
