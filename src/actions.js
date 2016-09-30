@@ -1,11 +1,18 @@
-// export const increment = ({ dispatch }, counterId) => dispatch('INCREMENT', counterId)
+export const testAccount = ({ dispatch }) => {
+  dispatch('TESTACCOUNT')
+}
 
-// export const decrement = ({ dispatch }, counterId) => dispatch('DECREMENT', counterId)
+// export const increment = ({ dispatch }) => dispatch('INCREMENT')
+// export const decrement = ({ dispatch }) => dispatch('DECREMENT')
 
-// export const addCounter = ({ dispatch }) => dispatch('ADD_COUNTER')
-
-// export const incrementIfOdd = (store, counterId) => {
-//   if (store.state.counters[counterId] % 2 !== 0) {
-//     store.dispatch('INCREMENT', counterId)
+// export const incrementIfOdd = ({ dispatch, state }) => {
+//   if ((state.count + 1) % 2 === 0) {
+//     dispatch('INCREMENT')
 //   }
+// }
+
+// export const incrementAsync = ({ dispatch }) => {
+//   setTimeout(() => {
+//     dispatch('INCREMENT')
+//   }, 1000)
 // }
